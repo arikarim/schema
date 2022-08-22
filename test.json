@@ -1,0 +1,142 @@
+{
+  "$id": "https://example.com/person.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "personalInfo": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "description": "The person's first name.",
+          "__metadata": {
+            "__isUpload": false,
+            "__labels": {
+              "en": "First name",
+              "ckb": "پۆستی بەکارهێنەر",
+              "ar": "الاسم الأول"
+            }
+          }
+        },
+        "lastName": {
+          "type": "string",
+          "description": "The person's first name.",
+          "__metadata": {
+            "__isUpload": false,
+            "__labels": {
+              "en": "Last name",
+              "ckb": "پۆستی بەکارهێنەر",
+              "ar": "الاسم الأول"
+            }
+          }
+        }
+      },
+      "__metadata": {
+        "__isUpload": false,
+        "__labels": {
+          "en": "Personal information",
+          "ckb": "زانیارییەکانی شخصەکان",
+          "ar": "معلومات شخصي"
+        }
+      },
+      "required": ["firstName"]
+    },
+    "businessInfo": {
+      "type": "object",
+      "properties": {
+        "businessName": {
+          "type": "string",
+          "description": "The person's first name.",
+          "__metadata": {
+            "__isUpload": false,
+            "__labels": {
+              "en": "Business Name",
+              "ckb": "پۆستی بەکارهێنەر",
+              "ar": "الاسم الأول"
+            }
+          }
+        },
+        "shareholders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "shareName": {
+                "type": "string",
+                "description": "The person's first name.",
+                "__metadata": {
+                  "__isUpload": false,
+                  "__labels": {
+                    "en": "Shareholder Name",
+                    "ckb": "پۆستی بەکارهێنەر",
+                    "ar": "الاسم الأول"
+                  }
+                }
+              },
+              "image": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "description": "The shareholder's name.",
+                      "__metadata": {
+                        "__isUpload": false,
+                        "__labels": {
+                          "en": "Name",
+                          "ckb": "ناو",
+                          "ar": "الاسم"
+                        }
+                      }
+                    },
+                    "bucket": {
+                      "type": "string",
+                      "description": "The shareholder's share.",
+                      "__metadata": {
+                        "__isUpload": false,
+                        "__labels": {
+                          "en": "Share",
+                          "ckb": "سهره",
+                          "ar": "الحصة"
+                        }
+                      }
+                    }
+                  },
+                  "required": ["key", "bucket"]
+                },
+                "__metadata": {
+                  "__isUpload": true,
+                  "__labels": {
+                    "en": "image",
+                    "ckb": "سهرهوردەر",
+                    "ar": "المساهم"
+                  }
+                }
+              }
+            },
+            "required": ["shareName", "image"]
+          },
+          "__metadata": {
+            "__isUpload": false,
+            "__labels": {
+              "en": "Shareholders",
+              "ckb": "شارقەکان",
+              "ar": "المساهمون"
+            }
+          }
+        }
+      },
+      "__metadata": {
+        "__isUpload": false,
+        "__labels": {
+          "en": "Business information",
+          "ckb": "زانیارییەکانی بەشداری",
+          "ar": "معلومات العمل"
+        }
+      }
+    }
+  },
+  "required": ["personalInfo", "businessInfo"]
+}
